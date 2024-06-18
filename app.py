@@ -15,9 +15,9 @@ uploaded_file = st.file_uploader("Upload your image...", type=["jpg","jpeg","png
 if uploaded_file is not None:
     st.image(uploaded_file, caption="Uploaded Image.", width=100)
     
-    encoded_image = base64.b64encode(uploaded_file.read()).decode("utf-8")
-    current_image = copy.deepcopy(encoded_image)
-    current_image = base64.b64decode(current_image)
+    encoded_image = base64.b64encode(uploaded_file.read()).decode("utf-8") 
+    encoded_image_copy = copy.deepcopy(encoded_image)
+    current_image = base64.b64decode(encoded_image_copy)
 
 # Display chat messages from history on app rerun
 for message in st.session_state.messages:
