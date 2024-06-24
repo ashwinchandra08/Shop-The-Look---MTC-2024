@@ -9,11 +9,11 @@ from azure.storage.blob import BlobServiceClient
 
 # Get environment variables for Azure AI Vision
 try:
-    endpoint = os.getenv("AZURE_AI_VISION_ENDPOINT")
-    key = os.getenv("AZURE_AI_VISION_API_KEY")
+    endpoint = os.getenv("AZURE_COMPUTER_VISION_ENDPOINT")
+    key = os.getenv("AZURE_COMPUTER_VISION_KEY")
     connection_string = os.getenv("BLOB_CONNECTION_STRING")
-    # container_name = os.getenv("BLOB_CONTAINER_NAME")
-    container_name = "vector-sandbox"
+    container_name = os.getenv("BLOB_CONTAINER_NAME")
+    # container_name = "vector-sandbox"
 except KeyError as e:
     print(f"Missing environment variable: {str(e)}")
     print("Set them before running this sample.")
